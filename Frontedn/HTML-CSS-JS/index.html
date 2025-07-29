@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Security System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Home Screen -->
+    <div id="home-screen" class="screen active">
+        <header class="header">
+            <button class="hamburger-btn" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1 class="header-title">Home Security System</h1>
+            <div class="user-avatar">
+                <div class="avatar-circle">U</div>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            
+            <button class="action-btn primary-btn" id="create-new-btn">
+                Create a New Home
+            </button>
+            
+            <div class="locations-list" id="locations-list">
+                <button class="location-btn" data-location="My Home">My Home</button>
+                <button class="location-btn" data-location="Delhi Office">Delhi Office</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Create New Location Modal -->
+    <div id="create-location-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Create New Location</h2>
+            <form id="create-location-form">
+                <input type="text" id="location-name" placeholder="Enter location name" maxlength="50" required>
+                <div class="modal-buttons">
+                    <button type="button" class="btn-cancel" id="cancel-create">Cancel</button>
+                    <button type="submit" class="btn-save">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Location Dashboard Screen -->
+    <div id="dashboard-screen" class="screen hidden">
+        <header class="header">
+            <button class="back-btn" id="dashboard-back">←</button>
+            <h1 class="header-title location-title" id="dashboard-title">My Home</h1>
+            <div class="user-avatar">
+                <div class="avatar-circle">U</div>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <div class="action-cards">
+                <button class="action-card emergency-btn" id="live-feed-btn">Live Feed</button>
+                <button class="action-card emergency-btn" id="emergency-btn">Emergency</button>
+                <button class="action-card emergency-btn" id="unknown-btn">Unknown</button>
+            </div>
+            
+            <div class="member-actions">
+                <button class="action-btn member-btn" id="add-member-btn">Add a New Member</button>
+                <button class="action-btn remove-btn" id="remove-member-btn">Remove a member</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Live Feed Screen -->
+    <div id="live-feed-screen" class="screen hidden">
+        <header class="header">
+            <button class="back-btn" id="live-feed-back">←</button>
+            <h1 class="header-title emergency-title">Live Feed</h1>
+            <div class="user-avatar">
+                <div class="avatar-circle">U</div>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <div class="camera-grid" id="camera-grid">
+                <button class="camera-btn" data-camera="Main Cam">Main Cam</button>
+                <button class="camera-btn" data-camera="Front Left side Cam">Front Left side Cam</button>
+                <button class="camera-btn" data-camera="Front Right Cam">Front Right Cam</button>
+                <button class="camera-btn" data-camera="Back left Cam">Back left Cam</button>
+                <button class="camera-btn" data-camera="Back right cam">Back right cam</button>
+                <button class="camera-btn" data-camera="Cam 6">Cam 6</button>
+                <button class="camera-btn" data-camera="Cam 7">Cam 7</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Emergency Screen -->
+    <div id="emergency-screen" class="screen hidden">
+        <header class="header">
+            <button class="back-btn" id="emergency-back">←</button>
+            <h1 class="header-title emergency-red-title">Emergency</h1>
+            <div class="user-avatar">
+                <div class="avatar-circle">U</div>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <div class="emergency-sections">
+                <div class="emergency-section">
+                    <div class="section-header">
+                        <button class="nav-arrow" id="images-prev">‹</button>
+                        <h3 class="section-title">Images</h3>
+                        <button class="nav-arrow" id="images-next">›</button>
+                    </div>
+                    <div class="section-content">
+                        <div class="image-placeholder">No images available</div>
+                    </div>
+                </div>
+                
+                <div class="emergency-section">
+                    <div class="section-header">
+                        <button class="nav-arrow" id="clips-prev">‹</button>
+                        <h3 class="section-title">clips</h3>
+                        <button class="nav-arrow" id="clips-next">›</button>
+                    </div>
+                    <div class="section-content">
+                        <div class="clips-placeholder">No clips available</div>
+                    </div>
+                </div>
+                
+                <div class="emergency-section">
+                    <h3 class="section-title">Message Box</h3>
+                    <div class="section-content">
+                        <textarea class="message-box" placeholder="Enter emergency message..." rows="5"></textarea>
+                        <button class="send-btn">Send Message</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Unknown Screen -->
+    <div id="unknown-screen" class="screen hidden">
+        <header class="header">
+            <button class="back-btn" id="unknown-back">←</button>
+            <h1 class="header-title emergency-title">Unknown</h1>
+            <div class="user-avatar">
+                <div class="avatar-circle">U</div>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <div class="unknown-content">
+                <h3 class="section-title">Message Box</h3>
+                <div class="large-message-box">
+                    <textarea class="message-area" placeholder="Enter message or notes..." rows="10"></textarea>
+                    <button class="save-message-btn">Save Message</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add New Member Screen -->
+    <div id="add-member-screen" class="screen hidden">
+        <header class="header">
+            <button class="back-btn" id="add-member-back">←</button>
+            <h1 class="header-title member-title">Add a New Member</h1>
+            <div class="user-avatar">
+                <div class="avatar-circle">U</div>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <form class="member-form" id="add-member-form">
+                <div class="form-group">
+                    <label class="form-label">Member Category</label>
+                    <select class="form-control" id="member-category" required>
+                        <option value="">Select category</option>
+                        <option value="Family member">Family member</option>
+                        <option value="relatives">relatives</option>
+                        <option value="House Cleaning">House Cleaning</option>
+                        <option value="Paper">Paper</option>
+                        <option value="milk">milk</option>
+                        <option value="vegetables boy">vegetables boy</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Enter Name</label>
+                    <input type="text" class="form-control" id="member-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Enter Age</label>
+                    <input type="number" class="form-control" id="member-age" min="1" max="120" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Sex - Male or Female</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="sex" value="Male" required>
+                            <span>Male</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="sex" value="Female" required>
+                            <span>Female</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Enter Address</label>
+                    <textarea class="form-control" id="member-address" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Upload a image</label>
+                    <input type="file" class="form-control" id="member-image" accept="image/*">
+                </div>
+                
+                <button type="submit" class="save-details-btn">Save Details</button>
+            </form>
+        </main>
+    </div>
+
+    <!-- Remove Member Screen -->
+    <div id="remove-member-screen" class="screen hidden">
+        <header class="header">
+            <button class="back-btn" id="remove-member-back">←</button>
+            <h1 class="header-title emergency-title">Remove a member</h1>
+            <div class="user-avatar">
+                <div class="avatar-circle">U</div>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <div class="members-section">
+                <h3 class="section-title">List of all members</h3>
+                <div class="members-table">
+                    <div class="table-header">
+                        <div class="table-cell">Name</div>
+                        <div class="table-cell">Category</div>
+                        <div class="table-cell">Stat</div>
+                    </div>
+                    <div id="members-list" class="table-body">
+                        <!-- Members will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Confirm Removal</h2>
+            <p>Are you sure you want to remove this member?</p>
+            <div class="modal-buttons">
+                <button class="btn-cancel" id="cancel-remove">No</button>
+                <button class="btn-danger" id="confirm-remove">Yes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
