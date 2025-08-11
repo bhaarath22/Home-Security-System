@@ -2,6 +2,8 @@
 
 Weapon detection system, delivered through a user-friendly web application built with **Streamlit** and powered by **Google's Gemini API**. 🚀 Users can either upload an image file or take a picture in real-time using their device's camera. If a weapon is detected, the system is designed to send an immediate and discreet alert to a specified Telegram chat, complete with the image and analysis results. 📱
 
+[Code](Model/WeaponDetection/1-WDFinal.py)  
+
 ## 🚀 Key Features
 
 - 🖼️ **Dual Input Methods**: Effortlessly upload an image file (.jpg, .jpeg, .png) or capture a photo directly from a camera for instant analysis

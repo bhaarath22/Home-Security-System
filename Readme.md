@@ -6,7 +6,7 @@ An AI-powered home security system that enhances safety by recognizing known ind
 
 ## 🚀 Features
 
-* **👤 Face Recognition**  
+* **👤 Face Recognition**  [Code](Model/FaceRecognition/FRinceptionResnet.py)
 
   Identifies and categorizes people as **Residents**, **Workers**, or **Relatives**. Unknown individuals are flagged immediately.
 
@@ -27,7 +27,7 @@ An AI-powered home security system that enhances safety by recognizing known ind
 ![alt](Data/img_4.png)  
 
 ---
-* **🔫 Weapon Detection**  
+* **🔫 Weapon Detection**  [Code](Model/WeaponDetection/1-WDFinal.py) 
 
   Automatically scans for weapons (guns, knives, etc.) when an unknown person is detected.  
 
