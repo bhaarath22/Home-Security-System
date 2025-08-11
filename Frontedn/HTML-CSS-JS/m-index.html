@@ -4,6 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Security System</title>
+    <script>
+        // This function checks if the user's token is valid and not expired.
+        // It's a simplified version of the validateJWT function from your auth.js.
+        function isTokenValid(token) {
+            if (!token) {
+                return false;
+            }
+            try {
+                // Decode the payload part of the token
+                const payload = JSON.parse(atob(token.split('.')[1]));
+                // Check if the expiration time (exp) is in the future
+                return payload.exp > Date.now();
+            } catch {
+                return false;
+            }
+        }
+
+        const token = localStorage.getItem('authToken');
+
+        // If the token is NOT valid, redirect the user to the login page.
+        if (!isTokenValid(token)) {
+            alert("You are not logged in. Redirecting to login page.");
+            window.location.href = '../auth/login.html';
+        }
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,10 +41,13 @@
                 <span></span>
             </button>
             <h1 class="header-title">Home Security System</h1>
+            <button id="logout-button" style="margin-right: 15px; padding: 8px 16px; border: 1px solid #ccc; border-radius: 5px; background: #f0f0f0; cursor: pointer;">Logout</button>
             <div class="user-avatar">
                 <div class="avatar-circle">U</div>
             </div>
         </header>
+
+
         
         <main class="main-content">
             
@@ -265,5 +293,6 @@
     </div>
 
     <script src="app.js"></script>
+    <script src="applogout.js"></script>
 </body>
 </html>
