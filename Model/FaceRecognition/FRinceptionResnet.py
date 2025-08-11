@@ -4,7 +4,7 @@ import os
 import torch
 from PIL import Image
 from facenet_pytorch import MTCNN, InceptionResnetV1
-1
+
 # Suppress warnings
 warnings.filterwarnings('ignore')
 
@@ -18,7 +18,7 @@ resnet = InceptionResnetV1(pretrained='vggface2').eval().to(device)
 
 
 # --- Load Known Faces ---
-def load_known_faces(base_path="/Users/bharathgoud/PycharmProjects/machineLearing/HomeSecurity/FaceRecognition/HSDS1"):
+def load_known_faces(base_path="/Users/bharathgoud/PycharmProjects/Home-Security-System/Model/FaceRecognition/Data"):
     known_embeddings, known_names, known_roles = [], [], []
 
     for role in os.listdir(base_path):

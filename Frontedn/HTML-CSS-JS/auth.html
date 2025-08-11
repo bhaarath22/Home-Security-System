@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Authentication App</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Myaccount</title>
+    <link rel="stylesheet" href="auth-style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <div id="app">
@@ -12,7 +13,7 @@
         <nav class="navbar" id="navbar">
             <div class="container">
                 <div class="nav-brand">
-                    <h2>Auth App</h2>
+                    <h2>Home Security System</h2>
                 </div>
                 <div class="nav-links" id="navLinks">
                     <button class="btn btn--outline" id="logoutBtn" style="display: none;">Logout</button>
@@ -142,21 +143,21 @@
                             </div>
                             <div class="card__body">
                                 <div class="dashboard-content">
-                                    <div class="user-info">
-                                        <h3>Account Information</h3>
-                                        <div class="info-item">
-                                            <label>Username:</label>
-                                            <span id="dashboardUsername">-</span>
-                                        </div>
-                                        <div class="info-item">
-                                            <label>Email:</label>
-                                            <span id="dashboardEmail">-</span>
-                                        </div>
-                                        <div class="info-item">
-                                            <label>Member since:</label>
-                                            <span id="dashboardJoinDate">-</span>
-                                        </div>
-                                    </div>
+<!--                                    <div class="user-info">-->
+<!--                                        <h3>Account Information</h3>-->
+<!--                                        <div class="info-item">-->
+<!--                                            <label>Username:</label>-->
+<!--                                            <span id="dashboardUsername">-</span>-->
+<!--                                        </div>-->
+<!--                                        <div class="info-item">-->
+<!--                                            <label>Email:</label>-->
+<!--                                            <span id="dashboardEmail">-</span>-->
+<!--                                        </div>-->
+<!--                                        <div class="info-item">-->
+<!--                                            <label>Member since:</label>-->
+<!--                                            <span id="dashboardJoinDate">-</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
                                     
                                     <div class="dashboard-actions">
                                         <button class="btn btn--secondary" id="dashboardLogoutBtn">
@@ -178,6 +179,6 @@
         </main>
     </div>
 
-    <script src="app.js"></script>
+    <script src="auth-supabase.js"></script>
 </body>
 </html>

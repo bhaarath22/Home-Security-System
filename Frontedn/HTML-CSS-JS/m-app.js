@@ -21,12 +21,9 @@ let appState = {
         {id: 7, name: "Cam 7", location: "cam7"}
     ],
     memberCategories: [
-        "Family member",
-        "relatives", 
-        "House Cleaning",
-        "Paper",
-        "milk",
-        "vegetables boy"
+        "Resident",
+        "Relative",
+        "Worker",
     ],
     maxLocations: 10
 };
